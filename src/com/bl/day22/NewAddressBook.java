@@ -31,6 +31,7 @@ public class NewAddressBook {
         person.setEmail(email);
         System.out.println("The Contact Details of " + firstName + " " + lastName + "\n" + person);
     }
+
     public void editContact() {
         Contact person = new Contact();
         System.out.println("Enter the First Name of person");
@@ -41,5 +42,14 @@ public class NewAddressBook {
             System.out.println("The Entered First Name Is Not Match");
         editContact();
     }
-}
 
+    public void deleteContact() {
+        Contact person = new Contact();
+        System.out.println("Enter firstName of the person");
+        String editName = sc.nextLine();
+        if (editName.equals(person.getFirstName())) {
+            System.out.println("Deleted " + person.getFirstName() + " details");
+            person = null;
+        }
+    }
+}
