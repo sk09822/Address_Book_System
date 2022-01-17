@@ -17,7 +17,7 @@ public class AddressBookMain {
         while (i < count) {
             System.out.println("Enter  book name");
             String bookName = scan.next();
-            NewAddressBook addressBook = new  NewAddressBook();
+            NewAddressBook addressBook = new NewAddressBook();
             addressBook.operation();
             map.put(bookName, addressBook);
             i++;

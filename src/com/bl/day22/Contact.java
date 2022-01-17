@@ -23,6 +23,8 @@ public class Contact {
     public Contact(String firstName, String lastName, String address, String state, String zipcode, String phoneNumber, String email, String cityForMap) {
     }
 
+
+
     public String getFirstName() {
         return firstName;
     }

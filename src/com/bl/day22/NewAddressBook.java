@@ -19,7 +19,7 @@ public class NewAddressBook {
         do {
 
             System.out.println("Choose Operation you want to do");
-            System.out.println("1. Add\t2.Edit\t3.Delete\t4.sortCity");
+            System.out.println("1. Add\t2.Edit\t3.Delete\t4.sortCity\t5.sortState\t6.show");
             switch (scan.nextInt()) {
                 case 1:
                     add();
@@ -32,6 +32,10 @@ public class NewAddressBook {
                     break;
                 case 4:
                     sortCity();
+                case 5:
+                    sortState();
+                case 6:
+                    print();
                 default:
                     status = false;
             }
@@ -50,7 +54,7 @@ public class NewAddressBook {
 
         System.out.println("Enter the address:");
         String address = scan.next();
-        contacts. setAddressCity(address);
+        contacts.setAddressCity(address);
 
 
 
@@ -94,19 +98,22 @@ public class NewAddressBook {
                         System.out.println("Re-Correct your Address");
                         contacts.setAddressCity(scan.next());
                         break;
-
                     case 3:
+                        System.out.println("Re-Correct your City");
+                        contacts.setAddressCity(scan.next());
+                        break;
+                    case 4:
                         System.out.println("Re-Correct your State");
                         contacts.setState(scan.next());
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Re-Correct your Zip");
                         contacts.setZip(scan.nextLong());
                         break;
-                    case 5:
+                    case 6:
                         System.out.println("Re-Correct your Phone Number");
                         contacts.setPhoneNumber(scan.nextLong());
-                    case 6:
+                    case 7:
                         System.out.println("Re-Correct your Email");
                         contacts.setEmail(scan.next());
                 }
@@ -119,7 +126,7 @@ public class NewAddressBook {
         System.out.println("Enter your First name:");
         String firstName = scan.next();
 
-        Iterator<Contact> iterator = list.listIterator();
+        ListIterator<Contact> iterator = list.listIterator();
         while (iterator.hasNext()) {
             Contact contacts = iterator.next();
 
@@ -138,6 +145,10 @@ public class NewAddressBook {
 
     public void sortCity() {
         Collections.sort(list, Sort.compareCity);
+    }
+
+    public void sortState() {
+        Collections.sort(list, Sort.compareState);
     }
 
     @Override
